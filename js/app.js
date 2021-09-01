@@ -35,7 +35,6 @@ const displaySearch = (booksArray) => {
     }
 
     // array loop
-
     booksArray.docs.splice(0, 6).forEach(book => {
         console.log(book)
         const div = document.createElement("div");
@@ -44,9 +43,8 @@ const displaySearch = (booksArray) => {
             <div class="card h-100">
                 <img src="https://covers.openlibrary.org/b/id/${book.key.cover_i}-L.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
+                    <p>Book Name: <span class="fs-5">${book.title}</span></p>
+                    <p>Author: <span class="fs-6">${book.author_name[0]}</span></p>
                 </div>
             </div>
         `
