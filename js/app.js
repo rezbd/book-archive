@@ -20,7 +20,12 @@ const searchButton = () => {
         .finally(searchInput.value = "")
 }
 
-const displaySearch = (books) => {
-    console.log(books)
+const displaySearch = (booksArray) => {
+    // error handling
+    if (booksArray.length === 0) {
+        errorContainer.innerHTML = `<p>NO RESULT FOUND</p>`
+    } else {
+        errorContainer.innerHTML = "";
+    }
 }
 
