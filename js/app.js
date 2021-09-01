@@ -11,11 +11,16 @@ const searchButton = () => {
     }
     // clear previous search
     bookContainer.innerHTML = "";
+    errorContainer.innerHTML = "";
     // search API
     const url = `http://openlibrary.org/search.json?q=${search}`;
     fetch(url)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => displaySearch(data.docs.splice(0, 8)))
         .finally(searchInput.value = "")
+}
+
+const displaySearch = (books) => {
+    console.log(books)
 }
 

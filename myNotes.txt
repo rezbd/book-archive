@@ -37,3 +37,5 @@ Facebook Live Instructions:
 
 -----------
 Cover i er jaigate ${ data.cover_i }
+
+console.log(data.docs.splice(0, 5))
