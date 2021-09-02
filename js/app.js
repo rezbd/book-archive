@@ -14,7 +14,7 @@ const searchButton = () => {
     bookContainer.innerHTML = "";
     errorContainer.innerHTML = "";
     // search API
-    const url = `http://openlibrary.org/search.json?q=${search}`;
+    const url = `https://openlibrary.org/search.json?q=${search}`;
     fetch(url)
         .then(res => res.json())
         .then(data => displaySearch(data))
