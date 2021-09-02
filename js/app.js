@@ -10,6 +10,7 @@ const searchButton = () => {
     // clear previous search
     bookContainer.innerHTML = "";
     errorContainer.innerHTML = "";
+    searchNumber.innerHTML = "";
     // search API
     const url = `https://openlibrary.org/search.json?q=${search}`;
     fetch(url)
