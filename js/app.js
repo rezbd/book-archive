@@ -22,7 +22,7 @@ const searchButton = () => {
 const displaySearch = (booksArray) => {
     // number of search results
     searchNumber.innerHTML = `
-        <p class="text-center fs-5">Showing <span class="fw-bold">${booksArray.docs.splice(0, 12).length}</span> of <span class="fw-bold">${booksArray.numFound}</span> search results</p>
+        <p class="text-center fs-5">Showing <span class="fw-bold">${booksArray.docs.slice(0, 13).length}</span> of <span class="fw-bold">${booksArray.numFound}</span> search results</p>
     `
 
     // error handling
@@ -34,7 +34,7 @@ const displaySearch = (booksArray) => {
     }
 
     // array loop
-    booksArray.docs.splice(0, 12).forEach(book => {
+    booksArray.docs.slice(0, 13).forEach(book => {
         console.log(book)
         const div = document.createElement("div");
         div.classList.add("col");
