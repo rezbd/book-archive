@@ -7,10 +7,6 @@ const searchNumber = document.getElementById('search-number');
 const searchButton = () => {
 
     const search = searchInput.value;
-    if (search === "") {
-        errorContainer.innerHTML = `<p class="fs-5 text-center">Search field cannot be empty. No result found</p>`
-        return;
-    }
     // clear previous search
     bookContainer.innerHTML = "";
     errorContainer.innerHTML = "";
@@ -31,7 +27,8 @@ const displaySearch = (booksArray) => {
     // error handling
     if (booksArray.numFound === 0) {
         errorContainer.innerHTML = `<p class="text-center text-danger fs-5">NO RESULT FOUND</p>`
-    } else {
+    }
+    else {
         errorContainer.innerHTML = "";
     }
 
