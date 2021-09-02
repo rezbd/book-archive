@@ -7,7 +7,7 @@ const searchNumber = document.getElementById('search-number');
 const searchButton = () => {
     const search = searchInput.value;
     if (search === "") {
-        errorContainer.innerHTML = `<p>No result found</p>`
+        errorContainer.innerHTML = `<p class="fs-5 text-center">Search field cannot be empty. No result found</p>`
         return;
     }
     // clear previous search
@@ -24,12 +24,12 @@ const searchButton = () => {
 const displaySearch = (booksArray) => {
     // number of search results
     searchNumber.innerHTML = `
-        <p class="text-center">Showing ${booksArray.docs.splice(0, 8).length} of ${booksArray.numFound} results</p>
+        <p class="text-center fs-5">Showing <span class="fw-bold">${booksArray.docs.splice(0, 8).length}</span> of <span class="fw-bold">${booksArray.numFound}</span> results</p>
     `
 
     // error handling
     if (booksArray.numFound === 0) {
-        errorContainer.innerHTML = `<p class="text-center">NO RESULT FOUND</p>`
+        errorContainer.innerHTML = `<p class="text-center text-danger fs-5">NO RESULT FOUND</p>`
     } else {
         errorContainer.innerHTML = "";
     }
@@ -43,7 +43,7 @@ const displaySearch = (booksArray) => {
             <div class="card h-100">
                 <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p>Book Name: <span class="fs-5">${book.title}</span></p>
+                    <p>Book Name: <span class="fs-4 fw-bold">${book.title}</span></p>
                     <p>Author: <span class="fs-6">${book.author_name[0]}</span></p>
                     <p>Publisher: <span class="fs-6">${book.publisher[0]}</span></p>
                     <p>First Publish Year: <span class="fs-6">${book.first_publish_year}</span></p>
