@@ -24,7 +24,7 @@ const searchButton = () => {
 const displaySearch = (booksArray) => {
     // number of search results
     searchNumber.innerHTML = `
-        <p class="text-center">Showing ${booksArray.docs.splice(0, 6).length} of ${booksArray.numFound} results</p>
+        <p class="text-center">Showing ${booksArray.docs.splice(0, 8).length} of ${booksArray.numFound} results</p>
     `
 
     // error handling
@@ -35,16 +35,18 @@ const displaySearch = (booksArray) => {
     }
 
     // array loop
-    booksArray.docs.splice(0, 6).forEach(book => {
+    booksArray.docs.splice(0, 8).forEach(book => {
         console.log(book)
         const div = document.createElement("div");
         div.classList.add("col");
         div.innerHTML = `
             <div class="card h-100">
-                <img src="https://covers.openlibrary.org/b/id/${book.key.cover_i}-L.jpg" class="card-img-top" alt="...">
+                <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <p>Book Name: <span class="fs-5">${book.title}</span></p>
                     <p>Author: <span class="fs-6">${book.author_name[0]}</span></p>
+                    <p>Publisher: <span class="fs-6">${book.publisher[0]}</span></p>
+                    <p>First Publish Year: <span class="fs-6">${book.first_publish_year}</span></p>
                 </div>
             </div>
         `
