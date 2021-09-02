@@ -38,14 +38,16 @@ const displaySearch = (booksArray) => {
     booksArray.docs.splice(0, 8).forEach(book => {
         console.log(book)
         const div = document.createElement("div");
+        const bookAuthor = `${book.author_name ? book.author_name[0] : ''}`;
+        const bookPublisher = `${book.publisher ? book.publisher[0] : ''}`
         div.classList.add("col");
         div.innerHTML = `
             <div class="card h-100">
                 <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <p>Book Name: <span class="fs-4 fw-bold">${book.title}</span></p>
-                    <p>Author: <span class="fs-6">${book.author_name[0]}</span></p>
-                    <p>Publisher: <span class="fs-6">${book.publisher[0]}</span></p>
+                    <p>Author: <span class="fs-6">${bookAuthor}</span></p>
+                    <p>Publisher: <span class="fs-6">${bookPublisher}</span></p>
                     <p>First Publish Year: <span class="fs-6">${book.first_publish_year}</span></p>
                 </div>
             </div>
